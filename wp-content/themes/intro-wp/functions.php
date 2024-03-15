@@ -15,6 +15,9 @@ register_post_type('recipe', [
     'hierarchical' => false,
     'menu_position' => 21,
     'menu_icon' => 'dashicons-carrot',
+    'rewrite' => [
+        'slug' => 'recettes',
+    ]
 ]);
 
 register_post_type('trips', [
@@ -24,6 +27,9 @@ register_post_type('trips', [
     'hierarchical' => false,
     'menu_position' => 22,
     'menu_icon' => 'dashicons-airplane',
+    'rewrite' => [
+        'slug' => 'recits-voyage',
+    ]
 ]);
 
 // Fonctions propres au thème :
