@@ -11,3 +11,6 @@
 </head>
 <body>
     <h1><?= get_bloginfo('name'); ?></h1>
+    <div class="menu">
+        <?php wp_nav_menu(['theme_location' => 'main']); ?>
+    </div>
