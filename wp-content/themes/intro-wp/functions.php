@@ -15,6 +15,7 @@ register_post_type('recipe', [
     'hierarchical' => false,
     'menu_position' => 21,
     'menu_icon' => 'dashicons-carrot',
+    'has_archive' => true,
     'rewrite' => [
         'slug' => 'recettes',
     ]
@@ -27,6 +28,7 @@ register_post_type('trips', [
     'hierarchical' => false,
     'menu_position' => 22,
     'menu_icon' => 'dashicons-airplane',
+    'has_archive' => true,
     'rewrite' => [
         'slug' => 'recits-voyage',
     ]
