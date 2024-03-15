@@ -17,6 +17,15 @@ register_post_type('recipe', [
     'menu_icon' => 'dashicons-carrot',
 ]);
 
+register_post_type('trips', [
+    'label' => 'Voyages',
+    'description' => 'Voyages affichés sur le site web',
+    'public' => true,
+    'hierarchical' => false,
+    'menu_position' => 22,
+    'menu_icon' => 'dashicons-airplane',
+]);
+
 // Fonctions propres au thème :
 
 // 1. Charger un fichier "public" (asset/image/css/script/...) pour le front-end.

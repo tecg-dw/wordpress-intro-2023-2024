@@ -38,6 +38,39 @@
                         <?php endwhile; endif; // Fin de "The Loop" des recettes ?>
                     </div>
                 </section>
+
+                <section class="trips">
+                    <h2 class="trips__title">Mes voyages</h2>
+
+                    <div class="trips__container">
+                        <?php
+
+                        // Faire une requête pour récupérer les 5 derniers articles de voyage.
+                        $trips = new WP_Query([
+                            'post_type' => 'trips',
+                            'post_status' => 'publish',
+                            'posts_per_page' => 5,
+                            'orderby' => 'date',
+                            'order' => 'DESC',
+                        ]);
+
+                        // Ouvrir la boucle autour du code HTML qui affiche un seul voyage
+                        if($trips->have_posts()): while($trips->have_posts()): $trips->the_post(); ?>
+                        
+                        <article class="trip">
+                            <h2 class="trip__title"><?= get_the_title(); ?></h2>
+                            <dl class="trip__info">
+                                <dt class="trip__term">Lieu:</dt>
+                                <dd class="trip__data"><?= get_field('location'); ?></dd>
+                                <dt class="trip__term">Date:</dt>
+                                <dd class="trip__data"><?= get_field('date'); ?></dd>
+                            </dl>
+                            <p><?= get_field('description'); ?></p>
+                        </article>
+
+                        <?php endwhile; endif; // Fin de la boucle des voyages ?>
+                    </div>
+                </section>
             <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
         </div>
     </main>
