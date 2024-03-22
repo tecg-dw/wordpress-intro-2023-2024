@@ -3,6 +3,21 @@
         <div class="page__content">
             <h1>Tous mes récits de voyage</h1>
 
+            <aside class="page__terms">
+                <h2 class="sro">Filtrer les résultats</h2>
+
+                <?php $countries = get_terms([
+                    'taxonomy' => 'countries',
+                    'orderby' => 'count',
+                    'order' => 'DESC',
+                    'hide_empty' => true,
+                ]);
+
+                foreach($countries as $country): ?>
+                    <a href="<?= get_term_link($country); ?>" class="page__term"><?= $country->name; ?></a>
+                <?php endforeach; ?>
+            </aside>
+
             <?php if(have_posts()): while(have_posts()): the_post(); // Ouverture de "The Loop" de Wordpress ?>
                 <article class="recipe">
                     <h3 class="recipe__title"><?= get_the_title(); ?></h3>
