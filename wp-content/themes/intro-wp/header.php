@@ -28,4 +28,18 @@
                 <?php endforeach; ?>
             </div>
         </nav>
+
+        <div class="search">
+            <?php get_search_form(); ?>
+
+            <?php // OU... ?>
+
+            <form action="<?= home_url(); ?>" method="get" class="search__form">
+                <div class="search__field">
+                    <label for="search">Votre recherche</label>
+                    <input type="search" name="s" id="search" placeholder="par exemple tarte..." value="<?= get_search_query(); ?>" />
+                    <button type="submit" class="search__btn">Rechercher !</button>
+                </div>
+            </form>
+        </div>
     </div>
