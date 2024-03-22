@@ -34,6 +34,21 @@ register_post_type('trips', [
     ]
 ]);
 
+// Enregistrer une taxonomie personnalisée :
+
+register_taxonomy('countries', ['trips','recipe'], [
+    'labels' => [
+        'name' => 'Pays',
+        'singular_name' => 'Pays',
+    ],
+    'description' => 'Les pays pour lesquels on a créé du contenu.',
+    'public' => true,
+    'hierarchical' => true,
+    'rewrite' => [
+        'slug' => 'pays'
+    ],
+]);
+
 // Fonctions propres au thème :
 
 // 1. Charger un fichier "public" (asset/image/css/script/...) pour le front-end.
