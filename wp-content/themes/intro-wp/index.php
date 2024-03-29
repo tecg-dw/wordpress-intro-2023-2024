@@ -54,7 +54,7 @@
                         $trips = new WP_Query([
                             'post_type' => 'trips',
                             'post_status' => 'publish',
-                            'posts_per_page' => 5,
+                            'posts_per_page' => 12,
                             'orderby' => 'date',
                             'order' => 'DESC',
                         ]);
@@ -63,15 +63,19 @@
                         if($trips->have_posts()): while($trips->have_posts()): $trips->the_post(); ?>
                         
                         <article class="trip">
-                            <h2 class="trip__title"><?= get_the_title(); ?></h2>
-                            <dl class="trip__info">
-                                <dt class="trip__term">Lieu:</dt>
-                                <dd class="trip__data"><?= get_field('location'); ?></dd>
-                                <dt class="trip__term">Date:</dt>
-                                <dd class="trip__data"><?= get_field('date'); ?></dd>
-                            </dl>
-                            <p><?= get_field('description'); ?></p>
-                            <a href="<?= get_permalink(); ?>" class="trip__link">Lire le récit de voyage "<?= get_the_title(); ?>"</a>
+                            <a href="<?= get_permalink(); ?>" class="trip__link">
+                                <span class="sro">Lire le récit de voyage "<?= get_the_title(); ?>"</span>
+                            </a>
+                            <div class="trip__box">
+                                <h2 class="trip__title"><?= get_the_title(); ?></h2>
+                                <dl class="trip__info">
+                                    <dt class="trip__term">Lieu:</dt>
+                                    <dd class="trip__data"><?= get_field('location'); ?></dd>
+                                    <dt class="trip__term">Date:</dt>
+                                    <dd class="trip__data"><?= get_field('date'); ?></dd>
+                                </dl>
+                                <p class="trip__description"><?= get_field('description'); ?></p>
+                            </div>
                         </article>
 
                         <?php endwhile; endif; // Fin de la boucle des voyages ?>
