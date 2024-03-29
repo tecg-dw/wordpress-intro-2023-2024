@@ -6,8 +6,8 @@
     
     <?php wp_head(); ?>
 
-    <link rel="stylesheet" href="<?= dw_asset('theme.css'); ?>">
-    <script src="<?= dw_asset('script.js') ?>"></script>
+    <link rel="stylesheet" href="<?= dw_asset('css/site.css'); ?>">
+    <script src="<?= dw_asset('js/site.js') ?>"></script>
 </head>
 <body>
     <h1><?= get_bloginfo('name'); ?></h1>
