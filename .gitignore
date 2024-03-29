@@ -13,5 +13,6 @@ wp-content/themes/*
 !wp-content/themes/intro-wp/resources/sass/*
 !wp-content/themes/intro-wp/resources/sass/components/*
 !wp-content/themes/intro-wp/resources/js/*
+!wp-content/themes/intro-wp/resources/js/components/*
 !wp-content/themes/intro-wp/resources/img/*
 !wp-content/themes/intro-wp/resources/fonts/*
