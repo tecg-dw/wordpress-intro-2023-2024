@@ -24,16 +24,20 @@
                         ?>
 
                         <article class="recipe">
-                            <h3 class="recipe__title"><?= get_the_title(); ?></h3>
-                            <dl class="recipe__info">
-                                <dt class="recipe__term">Durée:</dt>
-                                <dd class="recipe__data"><?= get_field('duration'); ?> minutes</dd>
-                                <dt class="recipe__term">Personnes:</dt>
-                                <dd class="recipe__data"><?= get_field('capacity'); ?></dd>
-                                <dt class="recipe__term">Prix:</dt>
-                                <dd class="recipe__data"><?= get_field('cost'); ?></dd>
-                            </dl>
-                            <a href="<?= get_permalink(); ?>" class="recipe__link">Lire la recette complète pour "<?= get_the_title(); ?>"</a>
+                            <a href="<?= get_permalink(); ?>" class="recipe__link">
+                                <span class="sro">Lire la recette complète pour "<?= get_the_title(); ?>"</span>
+                            </a>
+                            <div class="recipe__box">
+                                <h3 class="recipe__title"><?= get_the_title(); ?></h3>
+                                <dl class="recipe__info">
+                                    <dt class="recipe__term">Durée:</dt>
+                                    <dd class="recipe__data"><?= get_field('duration'); ?> minutes</dd>
+                                    <dt class="recipe__term">Personnes:</dt>
+                                    <dd class="recipe__data"><?= get_field('capacity'); ?></dd>
+                                    <dt class="recipe__term">Prix:</dt>
+                                    <dd class="recipe__data"><?= get_field('cost'); ?></dd>
+                                </dl>
+                            </div>
                         </article>
 
                         <?php endwhile; endif; // Fin de "The Loop" des recettes ?>
@@ -67,7 +71,7 @@
                                 <dd class="trip__data"><?= get_field('date'); ?></dd>
                             </dl>
                             <p><?= get_field('description'); ?></p>
-                            <a href="<?= get_permalink(); ?>" class="recipe__link">Lire le récit de voyage "<?= get_the_title(); ?>"</a>
+                            <a href="<?= get_permalink(); ?>" class="trip__link">Lire le récit de voyage "<?= get_the_title(); ?>"</a>
                         </article>
 
                         <?php endwhile; endif; // Fin de la boucle des voyages ?>
