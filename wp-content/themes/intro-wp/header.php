@@ -42,4 +42,18 @@
                 </div>
             </form>
         </div>
+
+        <?php // Version "BEM" avec JS pour faire un "quick search" ?>
+
+        <div class="quicksearch">
+            <form action="<?= home_url(); ?>" method="get" class="quicksearch__form">
+                <div class="quicksearch__field">
+                    <label for="search" class="quicksearch__label sro">Votre recherche</label>
+                    <input type="search" name="s" id="search" placeholder="Recherchez par exemple tarte..." value="<?= get_search_query(); ?>" class="quicksearch__input" />
+                    <button type="submit" class="quicksearch__btn">
+                        <span class="sro">Rechercher</span>
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>

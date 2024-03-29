@@ -1,0 +1,69 @@
+.quicksearch {
+    background: #fff;
+    padding: 2em;
+
+    &__form {
+        position: relative;
+    }
+
+    &__field {
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__input {
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid black;
+        transition: border 200ms ease-out;
+        font: inherit;
+        font-size: 1.2em;
+        padding: 0.4em 40px 0.4em 0;
+        margin: 0;
+        position: relative;
+        z-index: 0;
+
+        &:hover,
+        &:focus {
+            border-bottom: 1px solid red;
+            outline: none;
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        z-index: 1;
+        display: block;
+        font: inherit;
+        cursor: pointer;
+        width: 34px;
+        height: 34px;
+        margin: -17px 0 0 0;
+        background: transparent;
+        border: none;
+        padding: none;
+
+        &:before {
+            @include icon(search);
+            display: block;
+            width: 1em;
+            height: 1em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -0.5em 0 0 -0.5em;
+            color: black;
+            transition: color 200ms ease-out;
+        }
+
+        &:hover,
+        &:focus {
+            &:before {
+                color: red;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+body {
+    background: yellow;
+
+    * {
+        color: blue;
+    }
+
+    p { 
+        text-align: center;
+    }
+}
+
+@import "reset";
+@import "icons";
+@import "helpers";
+
+@import "components/quicksearch";
+
+@import "fonts";
