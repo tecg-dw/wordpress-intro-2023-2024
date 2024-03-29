@@ -5,8 +5,12 @@
 
             <?php if(have_posts()): while(have_posts()): the_post(); // Ouverture de "The Loop" de Wordpress ?>
                 <article class="result">
-                    <h3 class="result__title"><?= get_the_title(); ?></h3>
-                    <a href="<?= get_permalink(); ?>" class="recipe__link">Lire le résultat "<?= get_the_title(); ?>"</a>
+                    <a href="<?= get_permalink(); ?>" class="result__link">
+                        <span class="sro">Lire le résultat "<?= get_the_title(); ?>"</span>
+                    </a>
+                    <div class="result__box">
+                        <h3 class="result__title"><?= get_the_title(); ?></h3>
+                    </div>
                 </article>
             <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
 
