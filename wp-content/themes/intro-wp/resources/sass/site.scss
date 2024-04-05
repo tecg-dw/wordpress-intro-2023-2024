@@ -1,3 +1,7 @@
+html, html * {
+    box-sizing: border-box;
+}
+
 body {
     background: yellow;
 
@@ -20,5 +24,7 @@ body {
 @import "components/recipe";
 @import "components/trips";
 @import "components/trip";
+@import "components/form";
+@import "components/field";
 
 @import "fonts";
