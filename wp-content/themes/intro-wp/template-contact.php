@@ -17,8 +17,15 @@
                 <?php 
                 $errors = \DW\ContactForm::errors();
                 $values = \DW\ContactForm::values();
+                $feedback = \DW\ContactForm::feedback();
 
-                if($errors):?>
+                if($feedback): ?>
+                <div class="form__feedback">
+                    <p>Merci&nbsp;! Votre message a bien été envoyé.</p>
+                </div>
+                <?php else: ?>
+
+                <?php if($errors):?>
                 <div class="form__error">
                     <p>Oups&nbsp;! Il semblerait y avoir des erreurs, merci de vérifier.</p>
                 </div>
@@ -72,6 +79,7 @@
                         <button class="form__submit" type="submit">Envoyer</button>
                     </div>
                 </form>
+                <?php endif; ?>
             </section>
 
             <aside class="contact__info">
