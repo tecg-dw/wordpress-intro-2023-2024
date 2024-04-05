@@ -1,5 +1,12 @@
 <?php
 
+require_once(__DIR__ . '/src/ContactForm.php');
+
+// Démarrer la session
+if(session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 // Désactiver l'éditeur de texte Gutenberg de Wordpress :
 add_filter('use_block_editor_for_post', '__return_false');
 
@@ -82,3 +89,18 @@ function dw_get_navigation_links(string $location): array
     // Retourner le tableau de liens formatés
     return $items;
 }
+
+// Point d'entrée pour notre controlleur de formulaire de contact
+function dw_contact_form_controller()
+{
+    new \DW\ContactForm($_POST);
+}
+
+add_action('admin_post_custom_contact_form', 'dw_contact_form_controller');
+add_action('admin_post_nopriv_custom_contact_form', 'dw_contact_form_controller');
+
+
+
+
+
+
