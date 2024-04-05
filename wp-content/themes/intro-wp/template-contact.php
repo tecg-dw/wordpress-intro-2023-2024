@@ -6,8 +6,9 @@
             <header class="contact__header">
                 <h1 class="contact__title"><?= get_the_title(); ?></h1>
             </header>
-            <section class="contact__intro">
-                <p>Ici il y aura un formulaire de contract</p>
+            <section class="contact__form">
+                <h2>Contactez-moi via ce formulaire</h2>
+                <?= apply_filters('the_content', '[contact-form-7 id="50d0494" title="Contact form 1"]'); ?>
             </section>
             <aside class="contact__info">
                 <h2>Mes informations</h2>
