@@ -90,6 +90,27 @@ function dw_get_navigation_links(string $location): array
     return $items;
 }
 
+// Retrouver les langues définies dans Polylang afin de pouvoir les exploiter dans un menu par exemple :
+function dw_get_languages(): array
+{
+    $languages = [];
+
+    $polylangs = pll_the_languages(['echo' => false, 'raw' => true]);
+
+    foreach($polylangs as $code => $polylang) {
+        $lang = new stdClass();
+        $lang->url = $polylang['url'];
+        $lang->current = $polylang['current_lang'];
+        $lang->label = $polylang['name'];
+        $lang->code = $code;
+        $lang->locale = $polylang['locale'];
+
+        $languages[] = $lang;
+    }
+
+    return $languages;
+}
+
 // Point d'entrée pour notre controlleur de formulaire de contact
 function dw_contact_form_controller()
 {

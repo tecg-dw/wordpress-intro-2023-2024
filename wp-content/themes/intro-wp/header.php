@@ -27,6 +27,11 @@
                 <a href="<?= $link->url ?>" class="nav__link"><?= $link->label ?></a>
                 <?php endforeach; ?>
             </div>
+            <div class="nav__languages">
+                <?php foreach(dw_get_languages() as $lang): ?>
+                <a href="<?= $lang->url; ?>" class="nav__lang<?php if($lang->current):?> nav__lang--current<?php endif;?>" hreflang="<?= $lang->locale; ?>" title="<?= $lang->label; ?>"><?= $lang->code; ?></a>
+                <?php endforeach; ?>
+            </div>
         </nav>
 
         <div class="search">
