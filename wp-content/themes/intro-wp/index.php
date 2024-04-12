@@ -6,7 +6,7 @@
                 <?= get_the_content(); ?>
 
                 <section class="recipes">
-                    <h2 class="recipes__title">Mes dernières recettes</h2>
+                    <h2 class="recipes__title"><?= __('Mes dernières recettes', 'dw') ?></h2>
 
                     <div class="recipes__container">
                         <?php
@@ -25,16 +25,16 @@
 
                         <article class="recipe">
                             <a href="<?= get_permalink(); ?>" class="recipe__link">
-                                <span class="sro">Lire la recette complète pour "<?= get_the_title(); ?>"</span>
+                                <span class="sro"><?= str_replace(':title', get_the_title(), __('Lire la recette complète pour ":title"', 'dw')) ?></span>
                             </a>
                             <div class="recipe__box">
                                 <h3 class="recipe__title"><?= get_the_title(); ?></h3>
                                 <dl class="recipe__info">
-                                    <dt class="recipe__term">Durée:</dt>
-                                    <dd class="recipe__data"><?= get_field('duration'); ?> minutes</dd>
-                                    <dt class="recipe__term">Personnes:</dt>
+                                    <dt class="recipe__term"><? __('Durée:', 'dw') ?></dt>
+                                    <dd class="recipe__data"><?= str_replace(':duration', get_field('duration'), __(':duration minutes', 'dw')) ?></dd>
+                                    <dt class="recipe__term"><? __('Personnes:', 'dw') ?></dt>
                                     <dd class="recipe__data"><?= get_field('capacity'); ?></dd>
-                                    <dt class="recipe__term">Prix:</dt>
+                                    <dt class="recipe__term"><? __('Prix:', 'dw') ?></dt>
                                     <dd class="recipe__data"><?= get_field('cost'); ?></dd>
                                 </dl>
                             </div>
@@ -45,7 +45,7 @@
                 </section>
 
                 <section class="trips">
-                    <h2 class="trips__title">Mes voyages</h2>
+                    <h2 class="trips__title"><?= __('Mes voyages', 'dw') ?></h2>
 
                     <div class="trips__container">
                         <?php

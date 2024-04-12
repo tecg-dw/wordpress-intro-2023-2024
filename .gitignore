@@ -16,3 +16,4 @@ wp-content/themes/*
 !wp-content/themes/intro-wp/resources/js/components/*
 !wp-content/themes/intro-wp/resources/img/*
 !wp-content/themes/intro-wp/resources/fonts/*
+!wp-content/themes/intro-wp/locales/*

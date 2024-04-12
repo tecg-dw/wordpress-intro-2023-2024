@@ -7,6 +7,9 @@ if(session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+// Charger les fichiers de traduction :
+load_theme_textdomain('dw', __DIR__ . '/locales');
+
 // Désactiver l'éditeur de texte Gutenberg de Wordpress :
 add_filter('use_block_editor_for_post', '__return_false');
 

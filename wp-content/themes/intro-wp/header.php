@@ -22,7 +22,7 @@
         ?>
         <nav class="nav">
             <div class="wrapper">
-                <h2 class="sro">Navigation principale</h2>
+                <h2 class="sro"><?= __('Navigation principale', 'dw') ?></h2>
                 <div class="nav__container">
                     <?php foreach(dw_get_navigation_links('main') as $link): ?>
                     <a href="<?= $link->url ?>" class="nav__link"><?= $link->label ?></a>
@@ -43,9 +43,9 @@
 
             <form action="<?= home_url(); ?>" method="get" class="search__form">
                 <div class="search__field">
-                    <label for="search">Votre recherche</label>
-                    <input type="search" name="s" id="search" placeholder="par exemple tarte..." value="<?= get_search_query(); ?>" />
-                    <button type="submit" class="search__btn">Rechercher !</button>
+                    <label for="search"><?= __('Votre recherche', 'dw') ?></label>
+                    <input type="search" name="s" id="search" placeholder="<?= __('Recherchez par exemple tarte..', 'dw') ?>" value="<?= get_search_query(); ?>" />
+                    <button type="submit" class="search__btn"><?= __('Rechercher', 'dw') ?></button>
                 </div>
             </form>
         </div>
@@ -55,10 +55,10 @@
         <div class="quicksearch">
             <form action="<?= home_url(); ?>" method="get" class="quicksearch__form">
                 <div class="quicksearch__field">
-                    <label for="search" class="quicksearch__label sro">Votre recherche</label>
-                    <input type="search" name="s" id="search" placeholder="Recherchez par exemple tarte..." value="<?= get_search_query(); ?>" class="quicksearch__input" />
+                    <label for="search" class="quicksearch__label sro"><?= __('Votre recherche', 'dw') ?></label>
+                    <input type="search" name="s" id="search" placeholder="<?= __('Recherchez par exemple tarte..', 'dw') ?>" value="<?= get_search_query(); ?>" class="quicksearch__input" />
                     <button type="submit" class="quicksearch__btn">
-                        <span class="sro">Rechercher</span>
+                        <span class="sro"><?= __('Rechercher', 'dw') ?></span>
                     </button>
                 </div>
             </form>
