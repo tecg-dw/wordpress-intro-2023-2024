@@ -1,0 +1,38 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    z-index: 1000;
+    background: #fff;
+
+    .customize-support & {
+        top: 32px;
+    }
+
+    .wrapper {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__container,
+    &__languages {
+        display: flex;
+        justify-content: flex-start;
+        gap: 1em;
+        flex-wrap: nowrap;
+    }
+
+    &__lang {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #000;
+
+        &--current {
+            font-weight: bold;
+        }
+    }
+}

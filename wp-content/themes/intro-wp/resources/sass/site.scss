@@ -14,10 +14,18 @@ body {
     }
 }
 
+.wrapper {
+    width: 1200px;
+    max-width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+
 @import "reset";
 @import "icons";
 @import "helpers";
 
+@import "components/nav";
 @import "components/quicksearch";
 @import "components/result";
 @import "components/recipes";

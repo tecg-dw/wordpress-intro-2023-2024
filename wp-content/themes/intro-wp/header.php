@@ -14,23 +14,25 @@
     <div class="menu">
         <?php 
         // Afficher le menu de pied de page "façon Wordpress"
-        wp_nav_menu(['theme_location' => 'main', 'container' => 'nav']); 
+        // wp_nav_menu(['theme_location' => 'main', 'container' => 'nav']); 
         ?>
 
         <?php 
         // Afficher le menu de pied de page "façon MVC"
         ?>
         <nav class="nav">
-            <h2 class="nav_title">Navigation principale</h2>
-            <div class="nav__container">
-                <?php foreach(dw_get_navigation_links('main') as $link): ?>
-                <a href="<?= $link->url ?>" class="nav__link"><?= $link->label ?></a>
-                <?php endforeach; ?>
-            </div>
-            <div class="nav__languages">
-                <?php foreach(dw_get_languages() as $lang): ?>
-                <a href="<?= $lang->url; ?>" class="nav__lang<?php if($lang->current):?> nav__lang--current<?php endif;?>" hreflang="<?= $lang->locale; ?>" title="<?= $lang->label; ?>"><?= $lang->code; ?></a>
-                <?php endforeach; ?>
+            <div class="wrapper">
+                <h2 class="sro">Navigation principale</h2>
+                <div class="nav__container">
+                    <?php foreach(dw_get_navigation_links('main') as $link): ?>
+                    <a href="<?= $link->url ?>" class="nav__link"><?= $link->label ?></a>
+                    <?php endforeach; ?>
+                </div>
+                <div class="nav__languages">
+                    <?php foreach(dw_get_languages() as $lang): ?>
+                    <a href="<?= $lang->url; ?>" class="nav__lang<?php if($lang->current):?> nav__lang--current<?php endif;?>" hreflang="<?= $lang->locale; ?>" title="<?= $lang->label; ?>"><?= $lang->code; ?></a>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </nav>
 
