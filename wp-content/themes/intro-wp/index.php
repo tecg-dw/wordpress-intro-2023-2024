@@ -30,11 +30,11 @@
                             <div class="recipe__box">
                                 <h3 class="recipe__title"><?= get_the_title(); ?></h3>
                                 <dl class="recipe__info">
-                                    <dt class="recipe__term"><? __('Durée:', 'dw') ?></dt>
+                                    <dt class="recipe__term"><?= __('Durée:', 'dw') ?></dt>
                                     <dd class="recipe__data"><?= str_replace(':duration', get_field('duration'), __(':duration minutes', 'dw')) ?></dd>
-                                    <dt class="recipe__term"><? __('Personnes:', 'dw') ?></dt>
+                                    <dt class="recipe__term"><?= __('Personnes:', 'dw') ?></dt>
                                     <dd class="recipe__data"><?= get_field('capacity'); ?></dd>
-                                    <dt class="recipe__term"><? __('Prix:', 'dw') ?></dt>
+                                    <dt class="recipe__term"><?= __('Prix:', 'dw') ?></dt>
                                     <dd class="recipe__data"><?= get_field('cost'); ?></dd>
                                 </dl>
                             </div>
