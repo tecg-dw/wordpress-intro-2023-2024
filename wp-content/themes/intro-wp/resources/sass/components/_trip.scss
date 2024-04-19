@@ -31,6 +31,10 @@
         overflow: hidden;
         transition: transform 200ms ease-out,
                     box-shadow 200ms ease-out;
+
+        .trip--homepage & {
+            background: #d85a33;
+        }
     }
 
     &__title {

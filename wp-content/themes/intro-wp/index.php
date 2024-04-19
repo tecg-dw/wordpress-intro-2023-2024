@@ -21,26 +21,8 @@
 
                         // Boucler via "The Loop" sur le résultat de cette requete
                         if($recipes->have_posts()): while($recipes->have_posts()): $recipes->the_post();
-                        ?>
-
-                        <article class="recipe">
-                            <a href="<?= get_permalink(); ?>" class="recipe__link">
-                                <span class="sro"><?= str_replace(':title', get_the_title(), __('Lire la recette complète pour ":title"', 'dw')) ?></span>
-                            </a>
-                            <div class="recipe__box">
-                                <h3 class="recipe__title"><?= get_the_title(); ?></h3>
-                                <dl class="recipe__info">
-                                    <dt class="recipe__term"><?= __('Durée:', 'dw') ?></dt>
-                                    <dd class="recipe__data"><?= str_replace(':duration', get_field('duration'), __(':duration minutes', 'dw')) ?></dd>
-                                    <dt class="recipe__term"><?= __('Personnes:', 'dw') ?></dt>
-                                    <dd class="recipe__data"><?= get_field('capacity'); ?></dd>
-                                    <dt class="recipe__term"><?= __('Prix:', 'dw') ?></dt>
-                                    <dd class="recipe__data"><?= get_field('cost'); ?></dd>
-                                </dl>
-                            </div>
-                        </article>
-
-                        <?php endwhile; endif; // Fin de "The Loop" des recettes ?>
+                            dw_component('recipe');
+                        endwhile; endif; // Fin de "The Loop" des recettes ?>
                     </div>
                 </section>
 
@@ -60,25 +42,9 @@
                         ]);
 
                         // Ouvrir la boucle autour du code HTML qui affiche un seul voyage
-                        if($trips->have_posts()): while($trips->have_posts()): $trips->the_post(); ?>
-                        
-                        <article class="trip">
-                            <a href="<?= get_permalink(); ?>" class="trip__link">
-                                <span class="sro">Lire le récit de voyage "<?= get_the_title(); ?>"</span>
-                            </a>
-                            <div class="trip__box">
-                                <h2 class="trip__title"><?= get_the_title(); ?></h2>
-                                <dl class="trip__info">
-                                    <dt class="trip__term">Lieu:</dt>
-                                    <dd class="trip__data"><?= get_field('location'); ?></dd>
-                                    <dt class="trip__term">Date:</dt>
-                                    <dd class="trip__data"><?= get_field('date'); ?></dd>
-                                </dl>
-                                <p class="trip__description"><?= get_field('description'); ?></p>
-                            </div>
-                        </article>
-
-                        <?php endwhile; endif; // Fin de la boucle des voyages ?>
+                        if($trips->have_posts()): while($trips->have_posts()): $trips->the_post();
+                            dw_component('trip', ['modifier' => 'homepage']);
+                        endwhile; endif; // Fin de la boucle des voyages ?>
                     </div>
                 </section>
             <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>

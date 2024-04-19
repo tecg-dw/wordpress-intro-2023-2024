@@ -123,6 +123,18 @@ function dw_contact_form_controller()
 add_action('admin_post_custom_contact_form', 'dw_contact_form_controller');
 add_action('admin_post_nopriv_custom_contact_form', 'dw_contact_form_controller');
 
+// Fonction permettant d'inclure un composant
+function dw_component(string $component, array $arguments = []): void
+{
+    if(! ($path = realpath(__DIR__ . '/components/' . $component . '.php'))) {
+        // Le chemin vers le component n'existe pas.
+        throw new \Exception('Component "'. $component .'" is not defined.');
+    }
+
+    extract($arguments);
+
+    include($path);
+}
 
 
 
