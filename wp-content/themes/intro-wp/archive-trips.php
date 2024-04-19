@@ -23,6 +23,9 @@
                 dw_component('trip');
             endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
             </div>
+            <div class="trips__pagination">
+                <?= paginate_links(); ?>
+            </div>
         </section>
     </main>
 <?php get_footer(); ?>
